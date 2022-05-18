@@ -1,13 +1,22 @@
-import tekore as tk
+import spotipy
+from spotipy.oauth2 import SpotifyOAuth
+import configparser
+config = configparser.ConfigParser()
+config.read('variables.cfg')
 
-file = 'tekore.cfg'
-conf = tk.config_from_file(file, return_refresh=True)
 
-app_token = tk.request_client_token(
-    *conf[:2])
+scope = "user-library-read"
 
-spotify = tk.Spotify(app_token)
+sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=config.get('DEFAULT', 'SPOTIPY_CLIENT_ID'), client_secret=config.get(
+    'DEFAULT', 'SPOTIPY_CLIENT_SECRET'), redirect_uri=config.get('DEFAULT', 'SPOTIPY_REDIRECT_URI'), scope=scope))
 
-album = spotify.album('3RBULTZJ97bvVzZLpxcB0j')
-for track in album.tracks.items:
-    print(track.track_number, track.name)
+
+playlists = sp.user_playlists('spotify')
+while playlists:
+    for i, playlist in enumerate(playlists['items']):
+        print("%4d %s %s" %
+              (i + 1 + playlists['offset'], playlist['uri'],  playlist['name']))
+    if playlists['next']:
+        playlists = sp.next(playlists)
+    else:
+        playlists = None

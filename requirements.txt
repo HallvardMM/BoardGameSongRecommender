@@ -1,0 +1,14 @@
+anyio==3.6.1
+autopep8==1.6.0
+certifi==2021.10.8
+charset-normalizer==2.0.12
+h11==0.12.0
+httpcore==0.14.7
+httpx==0.22.0
+idna==3.3
+pycodestyle==2.8.0
+requests==2.27.1
+rfc3986==1.5.0
+sniffio==1.2.0
+toml==0.10.2
+urllib3==1.26.9

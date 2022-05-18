@@ -40,7 +40,7 @@ Leaving the virtual environment:
 ## Create token for Spotify
 
 - [Create application token for Spotify](https://developer.spotify.com/dashboard/applications)
-- Add ID and secret in tekore.cfg
+- Add SPOTIPY_CLIENT_ID and SPOTIPY_CLIENT_SECRET and SPOTIPY_REDIRECT_URI in variables.cfg
 
 ## To run the tasks
 
