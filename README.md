@@ -40,7 +40,17 @@ Leaving the virtual environment:
 ## Create token for Spotify
 
 - [Create application token for Spotify](https://developer.spotify.com/dashboard/applications)
-- Add SPOTIPY_CLIENT_ID and SPOTIPY_CLIENT_SECRET and SPOTIPY_REDIRECT_URI in variables.cfg
+- Add client id, client secret and redirect URIs found in _EDIT SETTINGS_
+- [Create musixmatch api key](https://developer.musixmatch.com/) find it in Dashboard -> Applications -> Default -> View
+- Add everything to _variables.cfg_ like this:
+
+```
+[DEFAULT]
+SPOTIPY_CLIENT_ID = yourId
+SPOTIPY_CLIENT_SECRET = yourSecret
+SPOTIPY_REDIRECT_URI = yourCallbackURI
+MUSIXMATCH_API_KEY = yourMusixmatchKey
+```
 
 ## To run the tasks
 

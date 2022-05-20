@@ -7,8 +7,11 @@ httpcore==0.14.7
 httpx==0.22.0
 idna==3.3
 pycodestyle==2.8.0
+pymusixmatch==0.3
 requests==2.27.1
 rfc3986==1.5.0
+six==1.16.0
 sniffio==1.2.0
+spotipy==2.19.0
 toml==0.10.2
 urllib3==1.26.9
